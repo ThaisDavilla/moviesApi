@@ -43,19 +43,19 @@ export default class Movies extends Component {
   render() {
     return (
       <div>
-       <input onChange={this.handleChange} />
-          {this.state.FilterMovies.map((item, index) => (
-              <div key={index}>
-                <ul>
-                  <li>{item.original_title}</li>
-                  <li>{item.overview}</li>
-                  <li>{item.vote_average}</li>
-                </ul>
-                <img src={item.image} alt='posters' />
-              </div>
-            ))
-          }
-            </div>
-    )
+        <input onChange={this.handleChange} />
+        {this.state.FilterMovies.map((item, index) => (
+          <div key={index}>
+            <ul>
+              <li>{item.original_title}</li>
+              <li>{item.overview}</li>
+              <li>{item.vote_average}</li>
+            </ul>
+            <img src={item.image} alt='posters' />
+          </div>
+        ))
+        }
+      </div>
+    );
   }
 }

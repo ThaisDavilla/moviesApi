@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../services/Home';
 import Movies from '../services/Movies';
-import {BrowserRouter, Link, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
 class Header extends Component {
     render() {
@@ -22,9 +22,9 @@ class Header extends Component {
                     </ul>
                 </nav>
                 <Routes>
-                    <Route path='/' element={<Home />}/>
-                    <Route path='/movies' element={<Movies />}/>
-                    <Route path='/series' element={<Series />}/>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/movies' element={<Movies />} />
+                    <Route path='/series' element={<Series />} />
                 </Routes>
             </BrowserRouter>
         );
