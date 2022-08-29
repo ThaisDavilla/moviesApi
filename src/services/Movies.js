@@ -3,8 +3,8 @@ import axios from 'axios'
 
 
 const FilmesApi = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/movie/550?api_key=60155d9794b7153bd4dfd6a33756c8ef'
-})
+   baseURL:'https://api.themoviedb.org/3/movie/popular?api_key=60155d9794b7153bd4dfd6a33756c8ef&language=pt-BR&page=1'
+  })
 console.log(FilmesApi)
 
 export default class Movies extends Component {
@@ -14,18 +14,25 @@ export default class Movies extends Component {
   }
 
   componentDidMount() {
-    this.getMovies()
-    this.getMovies();
+     this.getMovies();
   }
 
   getMovies = async () => {
+    const resposta = await FilmesApi.get()
+    console.log(resposta);
+
+    const allFilmes = resposta.data.results.map((item) => {
+      return {
+        ...item,
+        image: `https://image.tmdb.org/t/p/w500/${item.poster_path}`
+      }
+
+    })
     this.setState({
       movies: allFilmes,
-      FilterMovies: allFilmes
+     FilterMovies:allFilmes
     })
-    console.log(allFilmes)
   }
-
   handleChange = (event) => {
     const ListaFiltrada = this.state.movies.filter((item) => {
       if (item.original_title.toLowerCase().includes(event.target.value.toLowerCase())) {
@@ -35,7 +42,9 @@ export default class Movies extends Component {
       }
     })
     this.setState({
+      movies:ListaFiltrada,
       FilterMovies: ListaFiltrada
+
     })
     console.log(this.state.FilterMovies)
   }

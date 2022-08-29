@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Home from '../services/Home';
-import Movies from '../services/Movies';
+import Home from '../services/Home.js';
+import Movies from '../services/Movies.js';
+import Series from '../services/Series.js'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
 class Header extends Component {
