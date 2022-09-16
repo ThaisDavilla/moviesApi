@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import * as S from '../Components/Styled'
 
 
 const FilmesApi = axios.create({
@@ -53,6 +54,7 @@ export default class Movies extends Component {
     return (
       <div>
         <input onChange={this.handleChange} />
+        <S.Titulo>Oi</S.Titulo>
         {this.state.FilterMovies.map((item, index) => (
           <div key={index}>
             <ul>

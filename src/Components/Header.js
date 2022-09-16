@@ -3,25 +3,28 @@ import Home from '../services/Home.js';
 import Movies from '../services/Movies.js';
 import Series from '../services/Series.js'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import * as S from '../Components/Styled'
 
 class Header extends Component {
     render() {
         return (
             <BrowserRouter>
-                <h1>Movie Se</h1>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/movies'>Movies</Link>
-                        </li>
-                        <li>
-                            <Link to='/series'>Series</Link>
-                        </li>
-                    </ul>
-                </nav>
+                <S.BoxHeader>
+                    <S.Titulo>🎬 D'AvillaFlix 📽️</S.Titulo>
+                    <S.Navegar>
+                        <ul>
+                            <li>
+                                <Link to='/'>Início</Link>
+                            </li>
+                            <li>
+                                <Link to='/movies'>Filmes</Link>
+                            </li>
+                            <li>
+                                <Link to='/series'>Séries</Link>
+                            </li>
+                        </ul>
+                    </S.Navegar>
+                </S.BoxHeader>
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<Movies />} />

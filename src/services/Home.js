@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import * as S from '../Components/Styled'
 
 class Home extends Component {
     render() {
         return (
-            <div>
-                <h2>Essa é minha Home Page</h2>
-            </div>
+            <S.BoxHome>
+                <S.TituloTwo>Pegue a pipoca, sua bebida favorita e escolha o que quer assistir!</S.TituloTwo>
+            </S.BoxHome>
         );
     }
 }
